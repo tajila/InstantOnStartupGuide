@@ -30,7 +30,7 @@ public class Hooks {
 		System.out.println("Pre-checkpoint");
 
 		//uncomment the line below
-		//Utils.checkPointJVM("checkpointData");
+		//checkPointJVM("checkpointData");
 
 		System.out.println("Post-checkpoint");
 	}
@@ -43,7 +43,7 @@ public class Hooks {
 					.setFileLocks(true)
 					.setLogLevel(4)
 					.setLogFile("logs")
-					.registerPreSnapshotHook(()->System.out.println("Pre checkpoint hook!"))
+					.registerPreCheckpointHook(()->System.out.println("Pre checkpoint hook!"))
 					.registerPostRestoreHook(()->System.out.println("Post restore hook!"))
 					.checkpointJVM();
 		} else {
